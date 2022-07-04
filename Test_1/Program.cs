@@ -11,7 +11,26 @@ for (int i=0;i<inputArray.Length;i++)
         Console.WriteLine("Enter your strings: ");
         inputArray[i]=Console.ReadLine()??"0";
     }
+Console.WriteLine();
+Console.WriteLine("Input array:");
 for (int i=0;i<inputArray.Length;i++)
     Console.Write($" '{inputArray[i]}' ");
 
-  
+//Searching strings, which contain three or less chars
+int outputLengthArray = 0;
+for (int i = 0; i < inputArray.Length; i++)
+    if (inputArray[i].Length <= 3) outputLengthArray++;
+string[] outputArray = new string[outputLengthArray];
+int j = 0;
+for (int i = 0; i < inputArray.Length; i++)
+{
+    if (inputArray[i].Length <= 3)
+    {
+        outputArray[j] = inputArray[i];
+        j++;
+    }
+}
+Console.WriteLine();
+Console.WriteLine("Output array, which strings contain three or less chars:");
+for (int number=0; number<outputArray.Length; number++)
+    Console.Write($" '{outputArray[number]}' ");
